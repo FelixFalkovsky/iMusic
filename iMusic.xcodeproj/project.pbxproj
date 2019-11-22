@@ -13,6 +13,7 @@
 		880938372387CD96006F91D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880938362387CD96006F91D1 /* Assets.xcassets */; };
 		8809383A2387CD96006F91D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880938382387CD96006F91D1 /* LaunchScreen.storyboard */; };
 		886CE8E4238843A00095BA47 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CE8E3238843A00095BA47 /* SearchResponse.swift */; };
+		886CE8E623886B140095BA47 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 886CE8E523886B140095BA47 /* NetworkService.swift */; };
 		888F68772387CF10004D21A1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F68762387CF10004D21A1 /* MainTabBarController.swift */; };
 		888F68792387D288004D21A1 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F68782387D288004D21A1 /* SearchViewController.swift */; };
 		888F687B2387FE6F004D21A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F687A2387FE6F004D21A1 /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		880938392387CD96006F91D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8809383B2387CD96006F91D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		886CE8E3238843A00095BA47 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		886CE8E523886B140095BA47 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		888F68762387CF10004D21A1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		888F68782387D288004D21A1 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		888F687A2387FE6F004D21A1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				880938312387CD93006F91D1 /* ViewController.swift */,
 				888F68762387CF10004D21A1 /* MainTabBarController.swift */,
 				888F68782387D288004D21A1 /* SearchViewController.swift */,
+				886CE8E523886B140095BA47 /* NetworkService.swift */,
 				886CE8E3238843A00095BA47 /* SearchResponse.swift */,
 				888F687A2387FE6F004D21A1 /* Main.storyboard */,
 				880938362387CD96006F91D1 /* Assets.xcassets */,
@@ -221,6 +224,7 @@
 				8809382E2387CD93006F91D1 /* AppDelegate.swift in Sources */,
 				888F68772387CF10004D21A1 /* MainTabBarController.swift in Sources */,
 				880938302387CD93006F91D1 /* SceneDelegate.swift in Sources */,
+				886CE8E623886B140095BA47 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
