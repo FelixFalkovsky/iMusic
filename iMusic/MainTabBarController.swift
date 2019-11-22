@@ -20,7 +20,7 @@ class MainTabBarController: UITabBarController {
         
         
         viewControllers = [
-            generateViewController(rootViewController: SearchViewController(), image: #imageLiteral(resourceName: "searchGray"), title: "Поиск"),
+            generateViewController(rootViewController: SearchMusicViewController(), image: #imageLiteral(resourceName: "searchGray"), title: "Поиск"),
             generateViewController(rootViewController: ViewController(), image: #imageLiteral(resourceName: "libraryGray"), title: "Медиотека")
         ]
     }
