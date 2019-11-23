@@ -38,6 +38,7 @@ class SearchMusicViewController: UITableViewController {
     
     private func setupSearchBar() {
         navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
         searchController.searchBar.delegate = self
     }
     
