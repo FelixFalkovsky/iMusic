@@ -45,7 +45,7 @@
             <connections>
                 <outlet property="artistNameLabel" destination="nJq-LR-Ib7" id="0jb-Kg-KyA"/>
                 <outlet property="collectionNameLabel" destination="4lb-Ie-dLq" id="heE-g1-aKh"/>
-                <outlet property="trackImageView" destination="aO2-7v-ccK" id="2tg-Lb-TmO"/>
+                <outlet property="trackImageView" destination="aO2-7v-ccK" id="pfx-rR-Sxn"/>
                 <outlet property="trackNameLabel" destination="ZGa-P5-0lM" id="VH6-uA-n3Q"/>
             </connections>
             <point key="canvasLocation" x="50.724637681159422" y="46.875"/>

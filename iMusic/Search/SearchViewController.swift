@@ -97,8 +97,8 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         as! TrackCell
         
         let cellViewModel = searchViewModel.cells[indexPath.row]
-        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
-        cell.trackImageView.backgroundColor = .red
+//        print("cellViewModel.previewUrl:", cellViewModel.previewUrl)
+        cell.trackImageView.backgroundColor = .black
         cell.set(viewModel: cellViewModel)
 //        cell.textLabel?.text = "\(cellViewModel.trackName)\n\(cellViewModel.artistName)"
 //        cell.textLabel?.numberOfLines = 2
