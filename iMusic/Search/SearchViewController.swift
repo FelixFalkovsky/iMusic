@@ -24,6 +24,8 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
     private var searchViewModel = SearchViewModel.init(cells: [])
     private var timer: Timer?
     
+    private lazy var footerView = FooterView()
+    
     
     // MARK: Setup
     
@@ -39,11 +41,7 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         router.viewController     = viewController
     }
     
-    // MARK: Routing
-    
-    
-    
-    // MARK: View lifecycle
+    // MARK: viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,25 +63,27 @@ class SearchViewController: UIViewController, SearchDisplayLogic {
         
         let nib = UINib(nibName: "TrackCell", bundle: nil)
         table.register(nib, forCellReuseIdentifier: TrackCell.reuseId)
+        table.tableFooterView = footerView
     }
     
     func displayData(viewModel: Search.Model.ViewModel.ViewModelData) {
        
         switch viewModel {
             
-      
-        case .some:
-            print("viewController . some")
         case .displayTracks(let searchViewModel):
             print("viewController .displayTracks")
             self.searchViewModel = searchViewModel
             table.reloadData()
+            footerView.hideLoader()
+        case .displayFooterView:
+            footerView.showLoader()
         }
     }
 }
 
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
+// MARK: - UITableViewDelegate,
+// MARK: - UITableViewDataSource
 
 
 
@@ -109,7 +109,28 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 84
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let label = UILabel()
+        label.text = "Введите автора или название трека в поиск..."
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 15, weight: .light)
+        label.textColor = #colorLiteral(red: 1, green: 0.3094263673, blue: 0.4742257595, alpha: 1)
+        label.lineBreakMode = .byWordWrapping
+        label.numberOfLines = 0
+        return label
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return searchViewModel.cells.count > 0 ? 0 : 250
+    }
+    
 }
+
+
+// MARK: - UISearchBarDelegate
+
+
 
 extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {

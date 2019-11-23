@@ -12,6 +12,7 @@
 		880938322387CD93006F91D1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 880938312387CD93006F91D1 /* ViewController.swift */; };
 		880938372387CD96006F91D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880938362387CD96006F91D1 /* Assets.xcassets */; };
 		8809383A2387CD96006F91D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880938382387CD96006F91D1 /* LaunchScreen.storyboard */; };
+		8815731D2389C84300871835 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815731C2389C84300871835 /* FooterView.swift */; };
 		885C445D2388785200856CBB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44562388785200856CBB /* SearchPresenter.swift */; };
 		885C445E2388785200856CBB /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44572388785200856CBB /* SearchWorker.swift */; };
 		885C445F2388785200856CBB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44582388785200856CBB /* SearchRouter.swift */; };
@@ -39,6 +40,7 @@
 		880938362387CD96006F91D1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		880938392387CD96006F91D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8809383B2387CD96006F91D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8815731C2389C84300871835 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		885C44562388785200856CBB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		885C44572388785200856CBB /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		885C44582388785200856CBB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -107,9 +109,18 @@
 			path = iMusic;
 			sourceTree = "<group>";
 		};
+		8815731B2389BB5C00871835 /* FooterView */ = {
+			isa = PBXGroup;
+			children = (
+				8815731C2389C84300871835 /* FooterView.swift */,
+			);
+			path = FooterView;
+			sourceTree = "<group>";
+		};
 		885C44462388764400856CBB /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				8815731B2389BB5C00871835 /* FooterView */,
 				885C446923893DE900856CBB /* Cell */,
 				885C446423889F9D00856CBB /* SearchViewController.storyboard */,
 				885C445A2388785200856CBB /* SearchViewController.swift */,
@@ -295,6 +306,7 @@
 				880938322387CD93006F91D1 /* ViewController.swift in Sources */,
 				886CE8E4238843A00095BA47 /* SearchResponse.swift in Sources */,
 				885C44622388785200856CBB /* SearchInteractor.swift in Sources */,
+				8815731D2389C84300871835 /* FooterView.swift in Sources */,
 				885C446D23893E4700856CBB /* TrackCell.swift in Sources */,
 				8809382E2387CD93006F91D1 /* AppDelegate.swift in Sources */,
 				888F68772387CF10004D21A1 /* MainTabBarController.swift in Sources */,
