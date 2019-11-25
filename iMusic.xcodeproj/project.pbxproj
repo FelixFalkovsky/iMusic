@@ -13,6 +13,8 @@
 		880938372387CD96006F91D1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 880938362387CD96006F91D1 /* Assets.xcassets */; };
 		8809383A2387CD96006F91D1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 880938382387CD96006F91D1 /* LaunchScreen.storyboard */; };
 		8815731D2389C84300871835 /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815731C2389C84300871835 /* FooterView.swift */; };
+		881573202389D76200871835 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8815731F2389D76200871835 /* TrackDetailView.xib */; };
+		881573222389D78100871835 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881573212389D78100871835 /* TrackDetailView.swift */; };
 		885C445D2388785200856CBB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44562388785200856CBB /* SearchPresenter.swift */; };
 		885C445E2388785200856CBB /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44572388785200856CBB /* SearchWorker.swift */; };
 		885C445F2388785200856CBB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44582388785200856CBB /* SearchRouter.swift */; };
@@ -41,6 +43,8 @@
 		880938392387CD96006F91D1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8809383B2387CD96006F91D1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8815731C2389C84300871835 /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
+		8815731F2389D76200871835 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
+		881573212389D78100871835 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		885C44562388785200856CBB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		885C44572388785200856CBB /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		885C44582388785200856CBB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -117,9 +121,19 @@
 			path = FooterView;
 			sourceTree = "<group>";
 		};
+		8815731E2389D71900871835 /* TrackDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				8815731F2389D76200871835 /* TrackDetailView.xib */,
+				881573212389D78100871835 /* TrackDetailView.swift */,
+			);
+			path = TrackDetailView;
+			sourceTree = "<group>";
+		};
 		885C44462388764400856CBB /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				8815731E2389D71900871835 /* TrackDetailView */,
 				8815731B2389BB5C00871835 /* FooterView */,
 				885C446923893DE900856CBB /* Cell */,
 				885C446423889F9D00856CBB /* SearchViewController.storyboard */,
@@ -248,6 +262,7 @@
 				885C446B23893E1500856CBB /* TrackCell.xib in Resources */,
 				8809383A2387CD96006F91D1 /* LaunchScreen.storyboard in Resources */,
 				885C446523889F9D00856CBB /* SearchViewController.storyboard in Resources */,
+				881573202389D76200871835 /* TrackDetailView.xib in Resources */,
 				880938372387CD96006F91D1 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -316,6 +331,7 @@
 				885C44602388785200856CBB /* SearchModels.swift in Sources */,
 				880938302387CD93006F91D1 /* SceneDelegate.swift in Sources */,
 				885C445D2388785200856CBB /* SearchPresenter.swift in Sources */,
+				881573222389D78100871835 /* TrackDetailView.swift in Sources */,
 				886CE8E623886B140095BA47 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
