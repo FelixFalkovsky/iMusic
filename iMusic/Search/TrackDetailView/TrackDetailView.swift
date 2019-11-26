@@ -33,6 +33,7 @@ class TrackDetailView: UIView {
     }()
     
     weak var delegate: TrackMovingDelegate?
+    weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -73,6 +74,7 @@ class TrackDetailView: UIView {
             self.trackImageView.transform = .identity
         }, completion: nil)
     }
+    
     private func reduceTrackImageView() {
         UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.2, options: .curveEaseInOut, animations: {
             let scale: CGFloat = 0.8
@@ -126,7 +128,8 @@ class TrackDetailView: UIView {
         player.volume = volumeSlider.value
     }
     @IBAction func dragDowenButtonTappe(_ sender: Any) {
-        self.removeFromSuperview()
+        self.tabBarDelegate?.minimizedTrackDetailController()
+//        self.removeFromSuperview()
     }
     
     

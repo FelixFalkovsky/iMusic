@@ -104,23 +104,21 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 
         return cell
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 84
-    }
     
 // MARK: - didSelectRowAt
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         print("cellViewModel.trackName:", cellViewModel.trackName)
-        
         let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
-        let trackDetailsView = Bundle.main.loadNibNamed("TrackDetailView", owner: self, options: nil)?.first as! TrackDetailView
+        let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
         trackDetailsView.set(viewModel: cellViewModel)
         trackDetailsView.delegate = self
         window?.addSubview(trackDetailsView)
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 84
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let label = UILabel()

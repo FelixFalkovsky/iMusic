@@ -16,6 +16,7 @@
 		881573202389D76200871835 /* TrackDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8815731F2389D76200871835 /* TrackDetailView.xib */; };
 		881573222389D78100871835 /* TrackDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881573212389D78100871835 /* TrackDetailView.swift */; };
 		88157362238C3B1200871835 /* CMTime + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88157361238C3B1200871835 /* CMTime + Extension.swift */; };
+		88157364238D3FD200871835 /* Nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88157363238D3FD200871835 /* Nib.swift */; };
 		885C445D2388785200856CBB /* SearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44562388785200856CBB /* SearchPresenter.swift */; };
 		885C445E2388785200856CBB /* SearchWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44572388785200856CBB /* SearchWorker.swift */; };
 		885C445F2388785200856CBB /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 885C44582388785200856CBB /* SearchRouter.swift */; };
@@ -47,6 +48,7 @@
 		8815731F2389D76200871835 /* TrackDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackDetailView.xib; sourceTree = "<group>"; };
 		881573212389D78100871835 /* TrackDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackDetailView.swift; sourceTree = "<group>"; };
 		88157361238C3B1200871835 /* CMTime + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CMTime + Extension.swift"; sourceTree = "<group>"; };
+		88157363238D3FD200871835 /* Nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nib.swift; sourceTree = "<group>"; };
 		885C44562388785200856CBB /* SearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPresenter.swift; sourceTree = "<group>"; };
 		885C44572388785200856CBB /* SearchWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWorker.swift; sourceTree = "<group>"; };
 		885C44582388785200856CBB /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 			children = (
 				885C44662388A45A00856CBB /* UIViewController + Storyboard.swift */,
 				88157361238C3B1200871835 /* CMTime + Extension.swift */,
+				88157363238D3FD200871835 /* Nib.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8815731D2389C84300871835 /* FooterView.swift in Sources */,
 				88157362238C3B1200871835 /* CMTime + Extension.swift in Sources */,
 				885C446D23893E4700856CBB /* TrackCell.swift in Sources */,
+				88157364238D3FD200871835 /* Nib.swift in Sources */,
 				8809382E2387CD93006F91D1 /* AppDelegate.swift in Sources */,
 				888F68772387CF10004D21A1 /* MainTabBarController.swift in Sources */,
 				885C445E2388785200856CBB /* SearchWorker.swift in Sources */,
