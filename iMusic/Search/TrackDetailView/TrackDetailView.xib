@@ -12,6 +12,60 @@
         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Mn-IE-P2t" customClass="TrackDetailView" customModule="iMusic" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <subviews>
+                <view alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fa1-ah-KBS">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MI4-Xr-FqG">
+                            <rect key="frame" x="8" y="8" width="398" height="48"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="nPw-zm-SUc">
+                                    <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="48" id="VcM-ri-fyF"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2UT-6P-M3T">
+                                    <rect key="frame" x="68" y="0.0" width="202" height="48"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="113-uR-RYg">
+                                    <rect key="frame" x="290" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="kA6-RW-Mti"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="pause"/>
+                                    <connections>
+                                        <action selector="playPauseAction:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="GRs-xx-hPT"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNJ-X9-2eU">
+                                    <rect key="frame" x="354" y="0.0" width="44" height="48"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="3cJ-5n-kA4"/>
+                                    </constraints>
+                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <state key="normal" image="Right"/>
+                                    <connections>
+                                        <action selector="nextTrack:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="c6v-ud-2YD"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="414" id="16T-q7-kUL"/>
+                        <constraint firstItem="MI4-Xr-FqG" firstAttribute="top" secondItem="fa1-ah-KBS" secondAttribute="top" constant="8" id="4b6-0S-Pcx"/>
+                        <constraint firstItem="MI4-Xr-FqG" firstAttribute="leading" secondItem="fa1-ah-KBS" secondAttribute="leading" constant="8" id="7MB-Ol-4Oc"/>
+                        <constraint firstAttribute="bottom" secondItem="MI4-Xr-FqG" secondAttribute="bottom" constant="8" id="DZ9-Fm-0Uh"/>
+                        <constraint firstAttribute="height" constant="64" id="WGR-hB-yFJ"/>
+                        <constraint firstAttribute="trailing" secondItem="MI4-Xr-FqG" secondAttribute="trailing" constant="8" id="lXT-9b-dPQ"/>
+                    </constraints>
+                </view>
                 <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="10" id="7oL-IM-G03">
                     <rect key="frame" x="30" y="0.0" width="354" height="706"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
@@ -141,8 +195,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
                 <constraint firstItem="7oL-IM-G03" firstAttribute="leading" secondItem="4PR-WL-2Ad" secondAttribute="leading" constant="30" id="060-CI-OLS"/>
+                <constraint firstItem="4PR-WL-2Ad" firstAttribute="trailing" secondItem="fa1-ah-KBS" secondAttribute="trailing" id="6nj-fK-i8S"/>
                 <constraint firstItem="7oL-IM-G03" firstAttribute="top" secondItem="4PR-WL-2Ad" secondAttribute="top" id="OK4-n6-8k7"/>
+                <constraint firstItem="fa1-ah-KBS" firstAttribute="leading" secondItem="4PR-WL-2Ad" secondAttribute="leading" id="QGb-IM-4o1"/>
                 <constraint firstItem="4PR-WL-2Ad" firstAttribute="bottom" secondItem="7oL-IM-G03" secondAttribute="bottom" constant="30" id="ajN-MZ-IU8"/>
+                <constraint firstItem="fa1-ah-KBS" firstAttribute="top" secondItem="4PR-WL-2Ad" secondAttribute="top" id="gce-lg-A8B"/>
                 <constraint firstItem="4PR-WL-2Ad" firstAttribute="trailing" secondItem="7oL-IM-G03" secondAttribute="trailing" constant="30" id="wVh-lo-aVD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="4PR-WL-2Ad"/>
@@ -151,6 +208,12 @@
                 <outlet property="currentTimeLabel" destination="bjL-Iw-QgE" id="zaE-qC-Zqg"/>
                 <outlet property="currentTimeSlider" destination="JvB-Lt-2so" id="jPm-ha-sLi"/>
                 <outlet property="durationLabel" destination="XCs-dw-oP7" id="GNA-kl-PDa"/>
+                <outlet property="maxizedStackView" destination="7oL-IM-G03" id="H40-53-FVS"/>
+                <outlet property="miniGoForwardButton" destination="PNJ-X9-2eU" id="hDS-lz-9aT"/>
+                <outlet property="miniPlayPauseButton" destination="113-uR-RYg" id="ifq-Bj-SCJ"/>
+                <outlet property="miniTrackImageView" destination="nPw-zm-SUc" id="Cjh-98-Eay"/>
+                <outlet property="miniTrackTitleLabel" destination="2UT-6P-M3T" id="3mF-q8-QlC"/>
+                <outlet property="miniTrackView" destination="fa1-ah-KBS" id="xOY-UN-YaL"/>
                 <outlet property="playPauseButton" destination="jQ3-Fw-QDI" id="P07-M5-BJg"/>
                 <outlet property="trackImageView" destination="FmX-dX-oId" id="Ug6-9n-F95"/>
                 <outlet property="trackTitleLabel" destination="HC4-fV-OPi" id="18D-0q-agw"/>
@@ -163,6 +226,7 @@
         <image name="Drag Down" width="37" height="12"/>
         <image name="Icon Min" width="7" height="12"/>
         <image name="IconMax" width="17" height="17"/>
+        <image name="Image" width="61" height="60"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
         <image name="pause" width="57" height="57"/>
