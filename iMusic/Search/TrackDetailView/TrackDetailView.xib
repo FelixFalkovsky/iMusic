@@ -30,10 +30,10 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="113-uR-RYg">
+                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="247" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="113-uR-RYg">
                                     <rect key="frame" x="290" y="0.0" width="44" height="48"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="44" id="kA6-RW-Mti"/>
+                                        <constraint firstAttribute="width" constant="44" id="vXx-Mm-Byh"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -56,7 +56,7 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="414" id="16T-q7-kUL"/>
                         <constraint firstItem="MI4-Xr-FqG" firstAttribute="top" secondItem="fa1-ah-KBS" secondAttribute="top" constant="8" id="4b6-0S-Pcx"/>
@@ -90,7 +90,7 @@
                             <rect key="frame" x="0.0" y="476.66666666666669" width="354" height="49.000000000000057"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="JvB-Lt-2so">
+                                <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" minimumValueImage="Knob" maximumValueImage="Knob" id="JvB-Lt-2so">
                                     <rect key="frame" x="-2" y="0.0" width="358" height="31"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <connections>
@@ -120,16 +120,16 @@
                             <rect key="frame" x="0.0" y="535.66666666666663" width="354" height="63.333333333333371"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCz-ok-eMj">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCz-ok-eMj">
                                     <rect key="frame" x="113.33333333333331" y="0.0" width="127.66666666666669" height="33"/>
                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC4-fV-OPi">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Track Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC4-fV-OPi">
                                     <rect key="frame" x="129.33333333333334" y="36" width="95.666666666666657" height="27.333333333333329"/>
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                    <nil key="textColor"/>
+                                    <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -140,24 +140,31 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9p-bn-c6P">
                                     <rect key="frame" x="0.0" y="18.666666666666629" width="96.333333333333329" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="Left"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <state key="normal" image="Left">
+                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </state>
                                     <connections>
                                         <action selector="previousTrack:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="ldz-iq-Dac"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ3-Fw-QDI">
                                     <rect key="frame" x="96.333333333333329" y="0.0" width="161.33333333333337" height="57"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="pause"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <state key="normal" image="pause">
+                                        <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
+                                    </state>
                                     <connections>
                                         <action selector="playPauseAction:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="097-47-hyi"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-zr-hy4">
                                     <rect key="frame" x="257.66666666666669" y="18.666666666666629" width="96.333333333333314" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                    <state key="normal" image="Right"/>
+                                    <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <state key="normal" image="Right">
+                                        <color key="titleColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </state>
                                     <connections>
                                         <action selector="nextTrack:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="yFf-Q5-ylK"/>
                                     </connections>
@@ -194,13 +201,9 @@
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="7oL-IM-G03" firstAttribute="leading" secondItem="4PR-WL-2Ad" secondAttribute="leading" constant="30" id="060-CI-OLS"/>
                 <constraint firstItem="4PR-WL-2Ad" firstAttribute="trailing" secondItem="fa1-ah-KBS" secondAttribute="trailing" id="6nj-fK-i8S"/>
-                <constraint firstItem="7oL-IM-G03" firstAttribute="top" secondItem="4PR-WL-2Ad" secondAttribute="top" id="OK4-n6-8k7"/>
                 <constraint firstItem="fa1-ah-KBS" firstAttribute="leading" secondItem="4PR-WL-2Ad" secondAttribute="leading" id="QGb-IM-4o1"/>
-                <constraint firstItem="4PR-WL-2Ad" firstAttribute="bottom" secondItem="7oL-IM-G03" secondAttribute="bottom" constant="30" id="ajN-MZ-IU8"/>
                 <constraint firstItem="fa1-ah-KBS" firstAttribute="top" secondItem="4PR-WL-2Ad" secondAttribute="top" id="gce-lg-A8B"/>
-                <constraint firstItem="4PR-WL-2Ad" firstAttribute="trailing" secondItem="7oL-IM-G03" secondAttribute="trailing" constant="30" id="wVh-lo-aVD"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="4PR-WL-2Ad"/>
             <connections>
@@ -227,6 +230,7 @@
         <image name="Icon Min" width="7" height="12"/>
         <image name="IconMax" width="17" height="17"/>
         <image name="Image" width="61" height="60"/>
+        <image name="Knob" width="8" height="8"/>
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
         <image name="pause" width="57" height="57"/>
