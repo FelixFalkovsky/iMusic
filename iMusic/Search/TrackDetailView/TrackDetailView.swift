@@ -75,9 +75,21 @@ class TrackDetailView: UIView {
         
         miniTrackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapMaximized)))
         miniTrackView.addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
+        addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handleDismissalPan)))
     }
+
+    private func playTrack(previewUrl: String?) {
+        print("Пытаюсь запустить трек по ссылке: \(previewUrl ?? "Отсутствует")")
+        
+        guard let url = URL(string: previewUrl ?? "") else { return }
+        let playerItem = AVPlayerItem(url: url)
+        player.replaceCurrentItem(with: playerItem)
+        player.play()
+    }
+    
+    // MARK: - Maximizing and minimizing GESTURES
+    
     @objc private func handleTapMaximized() {
-        print("000")
         self.tabBarDelegate?.maximizedTrackDetailController(viewModel: nil)
     }
     
@@ -97,23 +109,16 @@ class TrackDetailView: UIView {
         let translation = gesture.translation(in: self.superview)
         self.transform = CGAffineTransform(translationX: 0, y: translation.y)
         let newAlpha = 1 + translation.y / 200
-        self.miniTrackImageView.alpha = newAlpha < 0 ? 0 : newAlpha
+        self.miniTrackView.alpha = newAlpha < 0 ? 0 : newAlpha
         self.maxizedStackView.alpha = -translation.y / 200
     }
-    private func playTrack(previewUrl: String?) {
-        print("Пытаюсь запустить трек по ссылке: \(previewUrl ?? "Отсутствует")")
-        
-        guard let url = URL(string: previewUrl ?? "") else { return }
-        let playerItem = AVPlayerItem(url: url)
-        player.replaceCurrentItem(with: playerItem)
-        player.play()
-    }
+    
     private func handlePanEnded(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.superview)
         let velocity = gesture.velocity(in: self.superview)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.transform = .identity
+            self.transform = CGAffineTransform.identity
             if translation.y < -200 || velocity.y < -500 {
                 self.tabBarDelegate?.maximizedTrackDetailController(viewModel: nil)
             } else {
@@ -121,6 +126,23 @@ class TrackDetailView: UIView {
                 self.maxizedStackView.alpha = 0
             }
         }, completion: nil)
+    }
+    @objc private func handleDismissalPan(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .ended:
+            let translation = gesture.translation(in: self.superview)
+            maxizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        case .changed:
+             let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+                self.maxizedStackView.transform = .identity
+                if translation.y > 50 {
+                    self.tabBarDelegate?.minimizedTrackDetailController()
+                }
+            }, completion: nil)
+        @unknown default:
+            print("000")
+        }
     }
     
     //MARK: - SettingsAnimations
