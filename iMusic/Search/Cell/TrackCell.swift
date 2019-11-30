@@ -30,6 +30,9 @@ class TrackCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    @IBOutlet weak var addTrackOutlet: UIButton!
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -39,6 +42,14 @@ class TrackCell: UITableViewCell {
     var cell: SearchViewModel.Cell?
     
     func set(viewModel: SearchViewModel.Cell) {
+        
+        let savedTracks = UserDefaults.standard.savedTracks()
+        let hasFavourite = savedTracks.firstIndex(where: { $0.trackName == self.cell?.artistName && $0.artistName == self.cell?.artistName }) != nil
+        if hasFavourite {
+            addTrackOutlet.isHidden = true
+        } else {
+            addTrackOutlet.isHidden = false
+        }
         
         self.cell = viewModel
         trackNameLabel.text = viewModel.trackName
@@ -50,33 +61,17 @@ class TrackCell: UITableViewCell {
     }
     
     @IBAction func addTrackAction(_ sender: Any) {
-        let defaults = UserDefaults.standard
-//        defaults.set(25, forKey: "Age")
-//        defaults.set("Hello", forKey: "String")
-//        print("AddTrack")
         
-        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: SearchViewModel.Cell.self, requiringSecureCoding: false) {
-            print("Alles Gut!")
-            defaults.set(savedData, forKey: "tracks")
-        }
-    }
-    
-    @IBAction func showInfoAction(_ sender: Any) {
         let defaults = UserDefaults.standard
-        if let savedTrack = defaults.object(forKey: "tracks") as? Data {
-            if let decodedTracks = try?
-            NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(savedTrack) as?
-                SearchViewModel.Cell {
-                print("decodedTracks.trackName: \(decodedTracks.trackName)")
-            }
+        guard let cell = cell else { return }
+        addTrackOutlet.isHidden = true
+        
+        var listOfTracks = defaults.savedTracks()
+        listOfTracks.append(cell)
+        
+        if let savedData = try? NSKeyedArchiver.archivedData(withRootObject: listOfTracks, requiringSecureCoding: false) {
+            print("Alles Gut!")
+            defaults.set(savedData, forKey: UserDefaults.favouriteTrackKey)
         }
-//        let age = defaults.integer(forKey: "Age")
-//        let string = defaults.object(forKey: "String") as? String
-//        print("age: \(age)")
-//        print("string: \(string)")
     }
-    
-    
-    
-    
 }
