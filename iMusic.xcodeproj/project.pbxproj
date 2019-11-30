@@ -32,6 +32,7 @@
 		888F68772387CF10004D21A1 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F68762387CF10004D21A1 /* MainTabBarController.swift */; };
 		888F68792387D288004D21A1 /* SearchMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888F68782387D288004D21A1 /* SearchMusicViewController.swift */; };
 		888F687B2387FE6F004D21A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 888F687A2387FE6F004D21A1 /* Main.storyboard */; };
+		88CD642C2392721800E3A79E /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CD642B2392721800E3A79E /* Library.swift */; };
 		EA34536A494F7DB04CA110C6 /* Pods_iMusic.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B7896C3465D658C11535B27 /* Pods_iMusic.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		888F68762387CF10004D21A1 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		888F68782387D288004D21A1 /* SearchMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMusicViewController.swift; sourceTree = "<group>"; };
 		888F687A2387FE6F004D21A1 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		88CD642B2392721800E3A79E /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		8B7896C3465D658C11535B27 /* Pods_iMusic.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iMusic.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5D38A131010F7026AC4084C /* Pods-iMusic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iMusic.debug.xcconfig"; path = "Target Support Files/Pods-iMusic/Pods-iMusic.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -105,6 +107,7 @@
 				8809382F2387CD93006F91D1 /* SceneDelegate.swift */,
 				885C44552388771600856CBB /* Services */,
 				888F68762387CF10004D21A1 /* MainTabBarController.swift */,
+				88CD642B2392721800E3A79E /* Library.swift */,
 				885C44462388764400856CBB /* Search */,
 				888F68782387D288004D21A1 /* SearchMusicViewController.swift */,
 				880938312387CD93006F91D1 /* ViewController.swift */,
@@ -339,6 +342,7 @@
 				885C44602388785200856CBB /* SearchModels.swift in Sources */,
 				880938302387CD93006F91D1 /* SceneDelegate.swift in Sources */,
 				885C445D2388785200856CBB /* SearchPresenter.swift in Sources */,
+				88CD642C2392721800E3A79E /* Library.swift in Sources */,
 				881573222389D78100871835 /* TrackDetailView.swift in Sources */,
 				886CE8E623886B140095BA47 /* NetworkService.swift in Sources */,
 			);
@@ -468,7 +472,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
 			};
