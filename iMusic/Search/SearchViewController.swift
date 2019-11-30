@@ -112,7 +112,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         let cellViewModel = searchViewModel.cells[indexPath.row]
         print("cellViewModel.trackName:", cellViewModel.trackName)
         
-        self.tabBarDelegate?.maximizedTrackDetailController(viewModel: cellViewModel)
+        self.tabBarDelegate?.maximizeTrackDetailController(viewModel: cellViewModel)
 //        let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
 //        let trackDetailsView: TrackDetailView = TrackDetailView.loadFromNib()
 //        trackDetailsView.set(viewModel: cellViewModel)

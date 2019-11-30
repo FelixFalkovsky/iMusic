@@ -90,13 +90,13 @@ class TrackDetailView: UIView {
     // MARK: - Maximizing and minimizing GESTURES
     
     @objc private func handleTapMaximized() {
-        self.tabBarDelegate?.maximizedTrackDetailController(viewModel: nil)
+        self.tabBarDelegate?.maximizeTrackDetailController(viewModel: nil)
     }
     
     @objc private func handlePan(gesture: UIPanGestureRecognizer) {
         switch gesture.state {
         case .began:
-            print("000")
+            print("")
         case .changed:
            handlePanChanged(gesture: gesture)
         case .ended:
@@ -105,9 +105,11 @@ class TrackDetailView: UIView {
             print("unknown default")
         }
     }
+    
     private func handlePanChanged(gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: self.superview)
         self.transform = CGAffineTransform(translationX: 0, y: translation.y)
+        
         let newAlpha = 1 + translation.y / 200
         self.miniTrackView.alpha = newAlpha < 0 ? 0 : newAlpha
         self.maxizedStackView.alpha = -translation.y / 200
@@ -118,33 +120,34 @@ class TrackDetailView: UIView {
         let velocity = gesture.velocity(in: self.superview)
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
-            self.transform = CGAffineTransform.identity
-            if translation.y < -200 || velocity.y < -500 {
-                self.tabBarDelegate?.maximizedTrackDetailController(viewModel: nil)
+            self.transform = .identity
+            if translation.y < -100 || velocity.y < -500 {
+                self.tabBarDelegate?.maximizeTrackDetailController(viewModel: nil)
             } else {
                 self.miniTrackView.alpha = 1
                 self.maxizedStackView.alpha = 0
             }
         }, completion: nil)
     }
+    
+    
     @objc private func handleDismissalPan(gesture: UIPanGestureRecognizer) {
         switch gesture.state {
-        case .ended:
+        case .changed:
             let translation = gesture.translation(in: self.superview)
             maxizedStackView.transform = CGAffineTransform(translationX: 0, y: translation.y)
-        case .changed:
-             let translation = gesture.translation(in: self.superview)
-            UIView.animate(withDuration: 0.6, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
+        case .ended:
+            let translation = gesture.translation(in: self.superview)
+            UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 1, options: .curveEaseInOut, animations: {
                 self.maxizedStackView.transform = .identity
                 if translation.y > 50 {
                     self.tabBarDelegate?.minimizedTrackDetailController()
                 }
             }, completion: nil)
         @unknown default:
-            print("000")
+            print("unknown default")
         }
     }
-    
     //MARK: - SettingsAnimations
     
     private func enlargeTrackImageView() {
