@@ -33,7 +33,8 @@ class MainTabBarController: UITabBarController {
         
         // MARK: - Library()
         
-        let library = Library()
+        var library = Library()
+        library.tabBarDelegate = self
         let hostVC = UIHostingController(rootView: library)
         hostVC.tabBarItem.image = #imageLiteral(resourceName: "libraryGray")
         hostVC.tabBarItem.title = "Медиатека"
@@ -56,7 +57,6 @@ class MainTabBarController: UITabBarController {
     }
     
     private func setupTrackDetailView() {
-        print("Настройка DetailView")
         trackDetailView.tabBarDelegate = self
         trackDetailView.delegate = searchVC
         view.insertSubview(trackDetailView, belowSubview: tabBar)

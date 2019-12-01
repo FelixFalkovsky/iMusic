@@ -65,7 +65,7 @@
     <resources>
         <image name="Add" width="16" height="16"/>
         <namedColor name="myColor">
-            <color red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="1" green="0.0" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
     </resources>
 </document>

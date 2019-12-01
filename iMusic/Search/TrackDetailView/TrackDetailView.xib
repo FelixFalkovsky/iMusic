@@ -3,6 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -88,17 +89,24 @@
                             </constraints>
                         </imageView>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="WET-Ok-1m8">
-                            <rect key="frame" x="0.0" y="449" width="354" height="49"/>
+                            <rect key="frame" x="0.0" y="449" width="354" height="45"/>
                             <subviews>
-                                <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" minimumValueImage="Knob" maximumValueImage="Knob" id="JvB-Lt-2so">
-                                    <rect key="frame" x="-2" y="0.0" width="358" height="31"/>
+                                <slider opaque="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" minimumValueImage="Knob" maximumValueImage="Knob" id="JvB-Lt-2so" customClass="DesignableSlider" customModule="iMusic" customModuleProvider="target">
+                                    <rect key="frame" x="-2" y="0.0" width="358" height="8"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="tintColor" name="myColor"/>
+                                    <color key="minimumTrackTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="maximumTrackTintColor" name="myColor"/>
+                                    <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="image" keyPath="thumbImage" value="Knob"/>
+                                    </userDefinedRuntimeAttributes>
                                     <connections>
                                         <action selector="handleCurrentTimeSlider:" destination="8Mn-IE-P2t" eventType="valueChanged" id="kmf-gn-oLO"/>
                                     </connections>
                                 </slider>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6rA-RL-djx">
-                                    <rect key="frame" x="0.0" y="31" width="354" height="18"/>
+                                    <rect key="frame" x="0.0" y="8" width="354" height="18"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjL-Iw-QgE">
                                             <rect key="frame" x="0.0" y="0.0" width="177" height="18"/>
@@ -114,49 +122,58 @@
                                         </label>
                                     </subviews>
                                 </stackView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Tl-os-1lU">
+                                    <rect key="frame" x="0.0" y="27" width="354" height="18"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="18" id="yIx-9i-OxO"/>
+                                    </constraints>
+                                    <color key="tintColor" name="myColor"/>
+                                    <state key="normal" image="Add"/>
+                                </button>
                             </subviews>
                         </stackView>
-                        <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="VMl-4j-qcS">
-                            <rect key="frame" x="0.0" y="518" width="354" height="70.333333333333371"/>
+                        <stackView opaque="NO" contentMode="scaleAspectFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="VMl-4j-qcS">
+                            <rect key="frame" x="0.0" y="514" width="354" height="65.333333333333371"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCz-ok-eMj">
-                                    <rect key="frame" x="113.33333333333331" y="0.0" width="127.66666666666669" height="33"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCz-ok-eMj">
+                                    <rect key="frame" x="0.0" y="0.0" width="127.66666666666667" height="33"/>
                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="24"/>
                                     <color key="textColor" red="1" green="0.0" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC4-fV-OPi">
-                                    <rect key="frame" x="129.33333333333334" y="43" width="95.666666666666657" height="27.333333333333329"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Track Title" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HC4-fV-OPi">
+                                    <rect key="frame" x="0.0" y="38" width="95.666666666666671" height="27.333333333333329"/>
                                     <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
-                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="xje-CQ-jfp">
-                            <rect key="frame" x="0.0" y="608.33333333333337" width="354" height="57"/>
+                            <rect key="frame" x="0.0" y="599.33333333333337" width="354" height="66"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9p-bn-c6P">
-                                    <rect key="frame" x="0.0" y="18.666666666666629" width="96.333333333333329" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <rect key="frame" x="0.0" y="23" width="96.333333333333329" height="20"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <state key="normal" image="Left">
-                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="titleColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <color key="titleShadowColor" cocoaTouchSystemColor="lightTextColor"/>
                                     </state>
                                     <connections>
                                         <action selector="previousTrack:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="ldz-iq-Dac"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jQ3-Fw-QDI">
-                                    <rect key="frame" x="96.333333333333329" y="0.0" width="161.33333333333337" height="57"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <rect key="frame" x="96.333333333333329" y="4.6666666666666288" width="161.33333333333337" height="57"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <state key="normal" image="pause"/>
                                     <connections>
                                         <action selector="playPauseAction:" destination="8Mn-IE-P2t" eventType="touchUpInside" id="097-47-hyi"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Jd-zr-hy4">
-                                    <rect key="frame" x="257.66666666666669" y="18.666666666666629" width="96.333333333333314" height="20"/>
-                                    <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <rect key="frame" x="257.66666666666669" y="23" width="96.333333333333314" height="20"/>
+                                    <color key="tintColor" cocoaTouchSystemColor="lightTextColor"/>
                                     <state key="normal" image="Right">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
@@ -178,6 +195,8 @@
                                 </imageView>
                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="rRQ-cf-55x">
                                     <rect key="frame" x="20" y="0.0" width="314" height="31"/>
+                                    <color key="tintColor" name="myColor"/>
+                                    <color key="thumbTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <connections>
                                         <action selector="handleVolumeSlider:" destination="8Mn-IE-P2t" eventType="valueChanged" id="Uxx-oJ-OXR"/>
                                     </connections>
@@ -192,10 +211,13 @@
                             </subviews>
                         </stackView>
                     </subviews>
-                    <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.95991010273972599" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="srY-2f-A89" firstAttribute="top" secondItem="7oL-IM-G03" secondAttribute="top" constant="685.33333333333337" id="Yse-95-rUF"/>
+                    </constraints>
                 </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" red="0.12245297383666728" green="0.12270688625455831" blue="0.13826064368527924" alpha="0.95162671232876717" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="4PR-WL-2Ad" firstAttribute="trailing" secondItem="fa1-ah-KBS" secondAttribute="trailing" id="6nj-fK-i8S"/>
                 <constraint firstItem="fa1-ah-KBS" firstAttribute="leading" secondItem="4PR-WL-2Ad" secondAttribute="leading" id="QGb-IM-4o1"/>
@@ -222,6 +244,7 @@
         </view>
     </objects>
     <resources>
+        <image name="Add" width="16" height="16"/>
         <image name="Drag Down" width="37" height="12"/>
         <image name="Icon Min" width="7" height="12"/>
         <image name="IconMax" width="17" height="17"/>
@@ -230,5 +253,8 @@
         <image name="Left" width="34" height="20"/>
         <image name="Right" width="34" height="20"/>
         <image name="pause" width="57" height="57"/>
+        <namedColor name="myColor">
+            <color red="1" green="0.0" blue="0.40000000596046448" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
     </resources>
 </document>

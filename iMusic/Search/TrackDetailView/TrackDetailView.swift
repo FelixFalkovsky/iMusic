@@ -10,7 +10,7 @@ import UIKit
 import SDWebImage
 import AVKit
 
-protocol TrackMovingDelegate: class {
+protocol TrackMovingDelegate {
     func moveBackForPreviousTrack() -> SearchViewModel.Cell?
     func moveForwardForPreviousTrack() -> SearchViewModel.Cell?
 }
@@ -40,7 +40,7 @@ class TrackDetailView: UIView {
         return avPlayer
     }()
     
-    weak var delegate: TrackMovingDelegate?
+    var delegate: TrackMovingDelegate?
     weak var tabBarDelegate: MainTabBarControllerDelegate?
     
     override func awakeFromNib() {
@@ -50,8 +50,10 @@ class TrackDetailView: UIView {
         trackImageView.transform = CGAffineTransform(scaleX: scale, y: scale)
         trackImageView.layer.cornerRadius = 15
         miniPlayPauseButton.imageEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12)
+        playPauseButton.imageEdgeInsets = .init(top: 10, left: 65, bottom: 10, right: 65)
         setupGestures()
     }
+    
     
     //MARK: - SET
     
